@@ -1,0 +1,103 @@
+.rs-features {
+	// .rs-features__list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+
+		@media (max-width: 1439.98px) {
+			gap: 24px;
+		}
+
+		@media (max-width: 1169.98px) {
+			gap: 16px;
+		}
+	}
+
+	// .rs-features__item
+	&__item {
+		--size: 75px;
+		flex: 1 1 calc(100% / 3 - 30px);
+		padding: 30px;
+		background-color: #f7f7f7;
+		clip-path: polygon(
+			/* Левый верхний угол */ 0px 0%,
+			/* Правый верхний угол */ calc(100% - var(--size)) 0%,
+			/* Правый верхний закругленный угол */ 100% var(--size),
+			/* Правый нижний угол */ 100% calc(100% - 0px),
+			/* Правый нижний закругленный угол */ calc(100% - 0px) 100%,
+			/* Левый нижний угол */ 0px 100%,
+			/* Левый нижний закругленный угол */ 0% calc(100% - 0px),
+			/* Левый верхний закругленный угол */ 0% 0px
+		);
+
+		&:nth-child(2n) {
+			clip-path: polygon(
+				/* Левый верхний угол */ 0px 0%,
+				/* Правый верхний угол */ calc(100% - 0px) 0%,
+				/* Правый верхний закругленный угол */ 100% 0px,
+				/* Правый нижний угол */ 100% calc(100% - var(--size)),
+				/* Правый нижний закругленный угол */ calc(100% - var(--size)) 100%,
+				/* Левый нижний угол */ 0px 100%,
+				/* Левый нижний закругленный угол */ 0% calc(100% - 0px),
+				/* Левый верхний закругленный угол */ 0% 0px
+			);
+		}
+
+		@media (max-width: 1439.98px) {
+			padding: 20px;
+		}
+
+		@media (max-width: 1169.98px) {
+			padding: 16px;
+		}
+
+		@media (max-width: 991.98px) {
+			--size: 50px;
+			flex: 1 1 100%;
+		}
+
+		@media (max-width: 767.98px) {
+			--size: 30px;
+		}
+	}
+
+	// .rs-features__img
+	&__img {
+		width: 80px;
+		height: 80px;
+		margin-bottom: 60px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+
+		@media (max-width: 1439.98px) {
+			width: 70px;
+			height: 70px;
+			margin-bottom: 50px;
+		}
+
+		@media (max-width: 1169.98px) {
+			width: 60px;
+			height: 60px;
+			margin-bottom: 40px;
+		}
+
+		@media (max-width: 991.98px) {
+			width: 50px;
+			height: 50px;
+			margin-bottom: 30px;
+		}
+	}
+
+	// .rs-features__desc
+	&__desc {
+		p {
+			margin-top: 18px;
+			line-height: 135%;
+		}
+	}
+}
